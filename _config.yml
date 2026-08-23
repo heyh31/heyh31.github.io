@@ -14,8 +14,8 @@ footer_text: >
   <style>
     :root,
     html[data-theme="light"] {
-      --global-theme-color: #526d82 !important;
-      --global-hover-color: #40586a !important;
+      --global-theme-color: #0066cc !important;
+      --global-hover-color: #004f9f !important;
     }
     html[data-theme="dark"] {
       --global-theme-color: #91a6b7 !important;
