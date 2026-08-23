@@ -146,7 +146,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--rename-sequential",
         action="store_true",
-        help="rename outputs globally as 0001.jpg, 0002.jpg, ...",
+        help=(
+            "rename outputs globally as 0001.jpg, 0002.jpg, ...; continue after "
+            "the highest existing number in the output folder"
+        ),
     )
     parser.add_argument(
         "--overwrite",
@@ -179,6 +182,28 @@ def natural_sort_key(value: str) -> tuple[tuple[int, object], ...]:
         (0, int(part)) if part.isdigit() else (1, part.casefold())
         for part in re.split(r"(\d+)", value)
     )
+
+
+def next_sequence_number(output_dir: Path) -> tuple[int, int]:
+    """Return the next numeric JPEG name and the existing padding width."""
+    highest = 0
+    digits = 4
+
+    if not output_dir.is_dir():
+        return 1, digits
+
+    for path in output_dir.iterdir():
+        if (
+            not path.is_file()
+            or path.suffix.lower() not in {".jpg", ".jpeg"}
+            or not path.stem.isdigit()
+        ):
+            continue
+        highest = max(highest, int(path.stem))
+        digits = max(digits, len(path.stem))
+
+    next_number = highest + 1
+    return next_number, max(digits, len(str(next_number)))
 
 
 def iter_images(
@@ -472,9 +497,23 @@ def main() -> int:
     source_total = 0
     output_total = 0
     reserved: set[Path] = set()
+    sequence_start = 1
     sequence_digits = max(4, len(str(len(sources))))
+    if args.rename_sequential:
+        sequence_start, existing_digits = next_sequence_number(output_dir)
+        last_sequence_number = sequence_start + len(sources) - 1
+        sequence_digits = max(
+            sequence_digits,
+            existing_digits,
+            len(str(last_sequence_number)),
+        )
+        if sequence_start > 1:
+            print(
+                f"Sequential naming continues at "
+                f"{sequence_start:0{sequence_digits}d}.jpg"
+            )
 
-    for index, source in enumerate(sources, start=1):
+    for index, source in enumerate(sources, start=sequence_start):
         destination = destination_for(
             source,
             input_dir,
