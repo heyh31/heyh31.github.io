@@ -11,10 +11,12 @@ on:
       - "**.html"
       - "**.js"
       - "**.liquid"
+      - "bin/sync_r2_gallery.py"
       - "**/*.md"
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "requirements.txt"
       - "CNAME"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
@@ -39,10 +41,12 @@ on:
       - "**.html"
       - "**.js"
       - "**.liquid"
+      - "bin/sync_r2_gallery.py"
       - "**/*.md"
       - "**.yml"
       - "Gemfile"
       - "Gemfile.lock"
+      - "requirements.txt"
       - "CNAME"
       - "!.github/workflows/axe.yml"
       - "!.github/workflows/broken-links.yml"
@@ -94,9 +98,19 @@ jobs:
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
       - name: Install and Build 🔧
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          R2_PREFIX: ${{ vars.R2_PREFIX || 'gallery/' }}
+          R2_PUBLIC_BASE_URL: ${{ vars.R2_PUBLIC_BASE_URL || 'https://photos.hyh31.top' }}
+          R2_IMAGE_RESIZER_BASE_URL: ${{ vars.R2_IMAGE_RESIZER_BASE_URL || 'https://hyh31.top' }}
+          R2_THUMBNAIL_OPTIONS: ${{ vars.R2_THUMBNAIL_OPTIONS || 'width=720,quality=82,format=auto' }}
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
-          pip3 install --upgrade nbconvert
+          pip3 install --upgrade nbconvert boto3
+          python bin/sync_r2_gallery.py --skip-if-unconfigured
           export JEKYLL_ENV=production
           bundle exec jekyll build
       - name: Purge unused CSS 🧹
