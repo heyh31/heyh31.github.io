@@ -31,6 +31,13 @@ images:
     border-radius: 8px;
   }
 
+  .gallery-copyright {
+    margin: 1.75rem 0 0;
+    color: var(--global-text-color-light, #828282);
+    font-size: 0.82rem;
+    text-align: center;
+  }
+
   @media (max-width: 768px) {
     .photo-wall {
       column-count: 2;
@@ -66,6 +73,10 @@ images:
     </figure>
   {% endfor %}
 </div>
+
+<p class="gallery-copyright">
+  © {{ site.time | date: "%Y" }} Yuhang He. All photographs are copyrighted. Please do not reproduce or use them without permission.
+</p>
 
 <script>
   (() => {
