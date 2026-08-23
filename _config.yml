@@ -11,6 +11,19 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal academic website of Yuhang He. Research interests include camera pipelines, AIGC, and the aesthetic enhancement of visual content.
 footer_text: >
+  <style>
+    :root {
+      --global-theme-color: #526d82;
+      --global-hover-color: #40586a;
+    }
+    html[data-theme="dark"] {
+      --global-theme-color: #91a6b7;
+      --global-hover-color: #b2c0ca;
+    }
+    :focus-visible {
+      outline-color: var(--global-theme-color);
+    }
+  </style>
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: Yuhang He, camera pipeline, AIGC, image processing, computer vision # add your own keywords or leave empty

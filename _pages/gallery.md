@@ -1,6 +1,6 @@
 ---
 layout: page
-title: gallery
+title: Gallery
 permalink: /gallery/
 nav: true
 nav_order: 4
@@ -9,6 +9,11 @@ images:
 ---
 
 <style>
+  .post > .post-header,
+  .al-lightbox-caption {
+    display: none;
+  }
+
   .photo-wall {
     column-count: 3;
     column-gap: 12px;
