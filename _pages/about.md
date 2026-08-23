@@ -9,9 +9,9 @@ profile:
   image: prof_pic.jpg
   image_circular: false
   more_info: >
-    <p>Beijing, China</p>
+    <p>Suzhou, China</p>
 
-selected_papers: false # publications are listed directly below for now
+selected_papers: true # render selected BibTeX entries with publication thumbnails
 social: true
 
 announcements:
@@ -51,12 +51,13 @@ My research interests include camera pipelines and AIGC, with a focus on enhanci
   - Image erasing, inpainting, outpainting, and AIGC
   - Oct. 2024 – Jan. 2025
 
+<!--
+The previous hand-written publication list is retained here as a reference.
+Publications are now rendered from _bibliography/papers.bib so that the
+template can display preview images consistently.
+
 ## Publications
 
-- [ColorFM: An Optimization-to-Learning Framework for Color Transfer via Flow Matching](https://github.com/cszn/ColorFM)
-  - Yuhang He; Kai Zhang; Xiaoming Li; Du Chen; Jian Yang
-  - ECCV 2026
-
-- [Dual Attention Enhanced Transformer for Image Defocus Deblurring](https://ieeexplore.ieee.org/abstract/document/10648112)
-  - Yuhang He; Senmao Tian; Jian Zhang; Shunli Zhang
-  - ICIP 2024
+- ColorFM: An Optimization-to-Learning Framework for Color Transfer via Flow Matching
+- Dual Attention Enhanced Transformer for Image Defocus Deblurring
+-->
