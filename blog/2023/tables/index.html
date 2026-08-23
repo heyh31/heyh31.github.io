@@ -37,16 +37,20 @@
   <span class="nt">&lt;/thead&gt;</span>
 <span class="nt">&lt;/table&gt;</span>
 </code></pre></div></div> <table data-click-to-select="true" data-height="460" data-pagination="true" data-search="true" data-toggle="table" data-url="/assets/json/table_data.json"> <thead> <tr> <th data-checkbox="true"></th> <th data-field="id" data-halign="left" data-align="center" data-sortable="true">ID</th> <th data-field="name" data-halign="center" data-align="right" data-sortable="true">Item Name</th> <th data-field="price" data-halign="right" data-align="left" data-sortable="true">Item Price</th> </tr> </thead> </table> </div> </article> <div id="giscus_thread" style="max-width: 930px; margin: 0 auto;"> <br> <blockquote class="block-danger"> <h5>giscus comments misconfigured</h5> <p>Please follow instructions at <a href="http://giscus.app" rel="external nofollow noopener" target="_blank">http://giscus.app</a> and update your giscus configuration.</p> <p>Missing required keys: <code>repo_id, category_id</code>.</p> </blockquote> </div> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yuhang He. <style>
-  :root {
-    --global-theme-color: #526d82;
-    --global-hover-color: #40586a;
+  :root,
+  html[data-theme="light"] {
+    --global-theme-color: #526d82 !important;
+    --global-hover-color: #40586a !important;
   }
   html[data-theme="dark"] {
-    --global-theme-color: #91a6b7;
-    --global-hover-color: #b2c0ca;
+    --global-theme-color: #91a6b7 !important;
+    --global-hover-color: #b2c0ca !important;
   }
   :focus-visible {
     outline-color: var(--global-theme-color);
+  }
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    text-transform: capitalize !important;
   }
 </style> Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
   window.alFolio = {

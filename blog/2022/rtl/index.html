@@ -14,16 +14,20 @@
 </code></pre></div></div> <h2 id="کد-و-ریاضیات-چپچین-میمانند">کد و ریاضیات چپ‌چین می‌مانند</h2> <p>کد و فرمول‌ها بدون توجه به زبان متن، چپ‌چین باقی می‌مانند. اگر جهت آن‌ها راست‌چین می‌شد، ترتیب عملگرها و نقطه‌گذاری به‌هم می‌ریخت:</p> <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">code</span><span class="p">.</span><span class="nf">strip</span><span class="p">().</span><span class="nf">lower</span><span class="p">().</span><span class="nf">split</span><span class="p">(</span><span class="sh">"</span><span class="s">-</span><span class="sh">"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </code></pre></div></div> <p>فرمول‌ها هم همین‌طور: \(E = mc^2\) و در حالت نمایشی:</p> \[\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\] <p>متن انگلیسی درون یک جملهٔ فارسی، مثل The quick brown fox، به‌درستی نمایش داده می‌شود، چون مرورگر خودش الگوریتم دوجهته را اعمال می‌کند.</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yuhang He. <style>
-  :root {
-    --global-theme-color: #526d82;
-    --global-hover-color: #40586a;
+  :root,
+  html[data-theme="light"] {
+    --global-theme-color: #526d82 !important;
+    --global-hover-color: #40586a !important;
   }
   html[data-theme="dark"] {
-    --global-theme-color: #91a6b7;
-    --global-hover-color: #b2c0ca;
+    --global-theme-color: #91a6b7 !important;
+    --global-hover-color: #b2c0ca !important;
   }
   :focus-visible {
     outline-color: var(--global-theme-color);
+  }
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    text-transform: capitalize !important;
   }
 </style> Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
   window.alFolio = {

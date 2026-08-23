@@ -104,16 +104,20 @@
 
   }
 </style> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yuhang He. <style>
-  :root {
-    --global-theme-color: #526d82;
-    --global-hover-color: #40586a;
+  :root,
+  html[data-theme="light"] {
+    --global-theme-color: #526d82 !important;
+    --global-hover-color: #40586a !important;
   }
   html[data-theme="dark"] {
-    --global-theme-color: #91a6b7;
-    --global-hover-color: #b2c0ca;
+    --global-theme-color: #91a6b7 !important;
+    --global-hover-color: #b2c0ca !important;
   }
   :focus-visible {
     outline-color: var(--global-theme-color);
+  }
+  .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    text-transform: capitalize !important;
   }
 </style> Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. </div> </footer> <script>
   window.alFolio = {
