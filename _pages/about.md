@@ -29,7 +29,7 @@ latest_posts:
 
 I am currently a master's student at the [School of Intelligence Science and Technology, Nanjing University](https://is.nju.edu.cn/main.htm). I received my B.Sc. degree from the [School of Software Engineering, Beijing Jiaotong University](http://sse.bjtu.edu.cn/cms/).
 
-My research interests include camera pipelines and AIGC, with a focus on enhancing the aesthetic quality of visual content.
+My research interests lie in generative model and image editing, with a focus on controllable visual generation and low-level visual enhancement.  
 
 ## Education
 
