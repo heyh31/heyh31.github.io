@@ -31,6 +31,8 @@ I am currently a master's student at the [School of Intelligence Science and Tec
 
 My research interests lie in generative model and image editing, with a focus on controllable visual generation and low-level visual enhancement.  
 
+I enjoy photography [↗]({{ '/gallery/' | relative_url }}) and listening to J-pop(like あいみょん and 乃木坂46). I am also a fan of Lionel Messi and FC Barcelona.
+
 ## Education
 
 - **M.S. in School of Intelligence Science and Technology, Nanjing University**
